@@ -1,4 +1,3 @@
-def playbookName = "AnsiblePlaybook.yml"
 pipeline {
   agent {
     node {
@@ -11,7 +10,7 @@ pipeline {
         script {
           def workspace = "/var/lib/jenkins/workspace/Ansible_Git"
           sh "chmod ugo+rwx $workspace/*"
-          sh "ansible-playbook $workspace + "/" + $playbookName"
+          sh "ansible-playbook $workspace/AnsiblePlaybook.yml"
         }
       }
     }
