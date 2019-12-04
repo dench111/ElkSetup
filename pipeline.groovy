@@ -9,7 +9,7 @@ pipeline {
       steps {
         script {
           def playbookName = "AnsiblePlaybook.yml"
-          def workspace = WORKSPACE
+          def workspace = "/var/lib/jenkins/workspace/Ansible_Git"
           sh "chmod ugo+rwx WORKSPACE"
           sh "ansible-playbook -i " + "inventory" + " " + workspace + "/" + playbookName
         }
