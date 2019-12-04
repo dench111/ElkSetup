@@ -11,7 +11,7 @@ pipeline {
           def playbookName = AnsiblePlaybook.yml
           def workspace = WORKSPACE
           sh "chmod ugo+rwx WORKSPACE"
-          sh "ansible-playbook -i " + "inventory" + " " + workspace + "/" + playbookName"
+          sh "ansible-playbook -i " + "inventory" + " " + workspace + "/" + playbookName
         }
       }
     }
