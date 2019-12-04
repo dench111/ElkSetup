@@ -8,9 +8,9 @@ pipeline {
     stage("Start Ansible Playbook from Git") {
       steps {
         script {
-          def workspace = "/var/lib/jenkins/workspace/Ansible_Git"
-          sh "chmod ugo+rwx $workspace/*"
-          sh "ansible-playbook -i " + "inventory" + " " + $workspace/AnsiblePlaybook.yml"
+          def workspace = WORKSPACE
+          sh "chmod ugo+rwx WORKSPACE"
+          sh "ansible-playbook -i " + "inventory" + " " + workspace + "/" AnsiblePlaybook.yml"
         }
       }
     }
