@@ -1,6 +1,8 @@
 ---
 - hosts: servers
   tasks:
+  - name: debug
+      debug: msg={{ ansible_distribution }}
   - name: Update System
     raw: yum update
     register: update_result
