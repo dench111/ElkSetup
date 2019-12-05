@@ -1,15 +1,15 @@
 ---
 - hosts: servers
   tasks:
+  - name: Update System
+    raw: yum update
   - name: Install Java
     yum:
       name: java-1.8.0-openjdk-devel
       state: present
-  tasks:
   - name: Fetch Java version
     shell: java -version 2>&1 | grep version | awk '{print $3}' | sed 's/"//g'                                                                                                                                   
     changed_when: False
     register: java_result
-
   - debug:
       msg: "{{ java_result.stdout }}"
