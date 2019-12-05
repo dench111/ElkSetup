@@ -14,8 +14,6 @@
   - debug:
       msg: "{{ java_result.stdout }}"
   - name: Install Java
-    when: "'java_result' not in java_result.stdout"
-    debug: msg="JAVA не установлена. Будет произведена установка"
     yum:
       name: java-1.8.0-openjdk-devel
       state: present
