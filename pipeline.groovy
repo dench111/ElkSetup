@@ -10,7 +10,7 @@ pipeline {
         script {
           def workspace = "/var/lib/jenkins/workspace/Ansible_Git"
           sh "chmod ugo+rwx $workspace/*"
-          sh "ansible-playbook -i " + "inventory" + " " + "$workspace/java-install-pb.yml" + " -vvv"
+          sh "ansible-playbook -i " + "inventory" + " " + "$workspace/java-install-pb.yml"
       }
     }
   }
