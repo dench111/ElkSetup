@@ -3,6 +3,10 @@
   tasks:
   - name: Update System
     raw: yum update
+    register: update_result
+  - name: Print result
+    debug:
+      var: update_result.stdout_lines
   - name: Install Java
     yum:
       name: java-1.8.0-openjdk-devel
