@@ -12,7 +12,7 @@
     changed_when: False
     register: java_result
   - debug:
-      msg: "Версия JAVA : {{ java_result.stdout }}"
+      msg: "{{ java_result.stdout }}"
   - name: Install Java
     when: "'java_result' not in java_result.stdout"
     debug: msg="JAVA не установлена. Будет произведена установка"
