@@ -23,7 +23,7 @@
       state: present
   - name: Add an Elastic digital signature key
     shell: wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-  - name: Stop FirewallD:
+  - name: Stop FirewallD
     systemd:
       name: firewalld
       state: stopped
