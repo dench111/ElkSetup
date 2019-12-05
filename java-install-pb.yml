@@ -23,8 +23,12 @@
       state: present
   - name: Add an Elastic digital signature key
     raw: wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-  - name: Open ELK ports on firewall
-    raw: firewall-cmd --permanent --add-port={9200,5601,9300}/tcp && firewall-cmd --reload
+  - name: Stop FirewallD:
+    systemd:
+      name: firewalld
+      state: stopped
+      enabled: no
+      masked: yes
   - name: Disable SElinux:
     raw: setenforce 0 && sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
   - name: Download elasticsearch rpm distr
