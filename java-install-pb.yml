@@ -11,6 +11,8 @@
     yum:
       name: java-1.8.0-openjdk-devel
       state: present
+  - name: View ENV VARIABLES
+    raw: ansible -m servers
   - name: Fetch Java version
     shell: java -version 2>&1 | grep version | awk '{print $3}' | sed 's/"//g'                                                                                                                                   
     changed_when: False
