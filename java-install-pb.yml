@@ -14,7 +14,7 @@
   - debug:
       msg: "{{ java_result.stdout }}"
   - name: Install Java
+    when: java_result.stdout|lenght != 0
     yum:
       name: java-1.8.0-openjdk-devel
       state: present
-      when: java_result.stdout|lenght != 0
