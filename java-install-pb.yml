@@ -2,7 +2,7 @@
 - hosts: servers
   tasks:
   - name: Install Java
-    yum:
+    apt:
       name: java-1.8.0-openjdk-devel
       state: present
   - name: check java version
