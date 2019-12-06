@@ -39,5 +39,5 @@
   - name: enable autostart
     systemd:
       name: elasticsearch
-      state: start
+      state: started
       enabled: yes
