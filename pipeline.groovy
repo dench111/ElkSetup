@@ -21,6 +21,7 @@ pipeline {
           sh "ansible-playbook -i " + "inventory" + " " + "$workspace/Elastic_Nodes-conf-pb.yml"
       }        
     }
+   }
   }
  }
 }
