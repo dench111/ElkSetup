@@ -37,5 +37,3 @@
 
   - debug:
       msg: "{{ files_matched.files }}"
-  - name: Download
-    include: Elastic_dwnl-pb.yml
