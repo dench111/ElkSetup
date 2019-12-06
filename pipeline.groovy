@@ -11,7 +11,7 @@ pipeline {
           def workspace = "/var/lib/jenkins/workspace/Ansible_Git"
           sh "chmod ugo+rwx $workspace/*"
           sh "ansible -m setup servers > $workspace/Ansible_env_variables.txt"
-          sh "ansible-playbook -i " + "inventory" + " " + "$workspace/Elastic_Nodes-install-pb.yml"
+          sh "ansible-playbook -i " + "inventory" + " " + "$workspace/Elastic-install-pb.yml"
       }
     }
   }
