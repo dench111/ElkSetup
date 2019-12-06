@@ -29,5 +29,13 @@
       masked: yes
   - name: Disable SElinux
     raw: setenforce 0 && sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
+  - name: Ansible find file examples
+    find:
+      paths: /opt/
+      patterns: "*.rpm"
+      register: files_matched
+
+  - debug:
+      msg: "{{ files_matched.files }}"
   - name: Download elasticsearch rpm distr
     include: Elastic_dwnl-pb.yml
