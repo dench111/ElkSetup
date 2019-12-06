@@ -1,2 +1,6 @@
 [servers]
-centos ansible_ssh_host=192.168.43.36
+ELKNode_192.168.43.36 ansible_ssh_host=192.168.43.36
+
+[nodes]
+
+[masters]
