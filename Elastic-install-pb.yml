@@ -37,5 +37,4 @@
 
   - debug:
       msg: "{{ files_matched.files }}"
-  - name: Download elasticsearch rpm distr
-    include: Elastic_dwnl-pb.yml
+  include: Elastic_dwnl-pb.yml
