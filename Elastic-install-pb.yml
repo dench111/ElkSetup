@@ -34,4 +34,10 @@
     register: files_matched
   - debug:
       msg: "{{ files_matched.files }}"
-  - debug: msg={{ files_matched.files }} | grep "path"
+  - name: Install elasticsearch
+    raw: rpm -ivh elasticsearch-*
+  - name: enable autostart
+    systemd:
+      name: elasticsearch
+      state: start
+      enabled: yes
