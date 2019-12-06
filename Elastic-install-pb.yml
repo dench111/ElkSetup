@@ -34,6 +34,5 @@
       paths: /opt/
       patterns: "*.rpm"
       register: files_matched
-
   - debug:
       msg: "{{ files_matched.files }}"
