@@ -27,9 +27,7 @@
       state: stopped
       enabled: no
       masked: yes
-  - name: Disable SElinux
-    raw: setenforce 0 && sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
-  - name: Ansible find file examples
+  - name: Ansible find elastic rpm
     find:
       paths: /opt/
       patterns: "*.rpm"
