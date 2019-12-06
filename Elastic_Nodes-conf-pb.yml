@@ -1,1 +1,10 @@
-
+---
+- hosts: nodes
+  tasks:
+  - name: enable autostart
+    systemd:
+      name: elasticsearch
+      state: stop
+      enabled: yes
+    debug:
+      msg: Stop Elasticsearch service
