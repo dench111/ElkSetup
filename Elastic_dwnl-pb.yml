@@ -1,5 +1,4 @@
 ---
-- hosts: nodes
   tasks:
     get_url:
       url: https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.8.3.rpm
