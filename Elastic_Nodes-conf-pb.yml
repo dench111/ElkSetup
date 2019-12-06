@@ -1,7 +1,7 @@
 ---
 - hosts: nodes
   tasks:
-  - name: enable autostart
+  - name: elastic stop
     systemd:
       name: elasticsearch
       state: stopped
