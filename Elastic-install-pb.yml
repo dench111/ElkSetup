@@ -37,4 +37,4 @@
 
   - debug:
       msg: "{{ files_matched.files }}"
-  include: Elastic_dwnl-pb.yml
+  - include: Elastic_dwnl-pb.yml
