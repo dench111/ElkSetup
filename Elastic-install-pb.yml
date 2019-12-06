@@ -36,6 +36,7 @@
       msg: "{{ files_matched.files }}"
   - name: Install elasticsearch
     raw: rpm -iv /opt/elasticsearch-6.5.4.rpm
+    ignore_errors: yes
   - name: Start Elasticsearch
     raw: service elasticsearch start
   - name: enable autostart
