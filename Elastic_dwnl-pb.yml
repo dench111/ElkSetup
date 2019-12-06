@@ -1,5 +1,5 @@
 ---
-- hosts: servers
+- hosts: nodes
   tasks:
   - name: Download elasticsearch rpm distr
     get_url:
