@@ -33,4 +33,4 @@
       patterns: "*.rpm"
     register: files_matched
   - debug:
-      msg: "{{ files_matched.files }}"
+      msg: "{{ files_matched.files }} | grep "path""
