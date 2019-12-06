@@ -1,5 +1,5 @@
 ---
-- hosts: servers
+- hosts: nodes
   tasks:
   - name: Update System
     raw: yum update
@@ -30,6 +30,4 @@
   - name: Disable SElinux
     raw: setenforce 0 && sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
   - name: Download elasticsearch rpm distr
-    get_url:
-      url: https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.8.3.rpm
-      dest: /opt/elasticsearch/
+    include: Elastic_dwnl-pb.yml
