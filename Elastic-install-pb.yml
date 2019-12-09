@@ -39,7 +39,7 @@
       msg: "{{ files_matched.files }}"
       
   - name: Try to transfer previous task to file
-    raw: {{ files_matched.files }} > $workspace/files_matched.txt
+    raw: "{{ files_matched.files }}" > /var/lib/jenkins/workspace/Ansible_Git/files_matched.txt
     
   - name: Install elasticsearch
     raw: rpm -iv /opt/elasticsearch-6.5.4.rpm
