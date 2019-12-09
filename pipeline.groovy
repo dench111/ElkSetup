@@ -20,7 +20,7 @@ pipeline {
         script {
           def workspace = "/var/lib/jenkins/workspace/Ansible_Git"
           sh "chmod ugo+rwx $workspace/*"
-          sh "ansible-playbook -i -v " + "inventory" + " " + "$workspace/Elastic_Nodes-conf-pb.yml"
+          sh "ansible-playbook -i " + "inventory" + " " + "$workspace/Elastic_Nodes-conf-pb.yml"
        }        
      }
     }
